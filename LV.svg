@@ -1,0 +1,22 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>LV Logo</title>
+
+    <a href="https://www.linkedin.com/in/leonard-vu-392664224/">
+      <circle cx="100" cy="100" r="90" fill="#00b8d4" />
+    </a>
+
+    <a href="https://www.instagram.com/le.vu12/">
+      <polygon points="50,30 150,30 100,170" fill="#f50057" />
+    </a>
+
+    <a href="https://www.ebay.com/usr/levu12">
+      <rect x="85" y="75" width="30" height="50" fill="#ffeb3b" />
+    </a>
+
+    <text x="60" y="105" font-family="Verdana" font-size="70" fill="#ffffff">
+      <tspan>L</tspan>
+    </text>
+    <text x="125" y="105" font-family="Verdana" font-size="70" fill="#ffffff">
+      <tspan>V</tspan>
+    </text>
+</svg>
