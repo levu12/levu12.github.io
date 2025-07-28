@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <title>Access Required - Leo's Cyber Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f1419);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .auth-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lock-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #64ffda;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            color: #64ffda;
+            font-size: 1.8rem;
+        }
+        
+        .subtitle {
+            margin-bottom: 30px;
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #64ffda;
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+        }
+        
+        input[type="password"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #64ffda, #1de9b6);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+        }
+        
+        .error {
+            color: #ff5252;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #546e7a;
+        }
+        
+        .hint {
+            background: rgba(100, 255, 218, 0.1);
+            border-left: 3px solid #64ffda;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #b0bec5;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="lock-icon">🔐</div>
+        <h1>Leo's Cyber Lab</h1>
+        <p class="subtitle">Private Development Site</p>
+        
+        <form id="authForm">
+            <div class="form-group">
+                <label for="password">Access Code:</label>
+                <input type="password" id="password" placeholder="Enter access code" required>
+            </div>
+            <button type="submit" class="btn">Enter Site</button>
+            <div class="error" id="errorMsg">Invalid access code. Please try again.</div>
+        </form>
+        
+        <div class="hint">
+            🔒 This is a private development environment for cybersecurity research and project showcasing.
+        </div>
+        
+        <div class="footer">
+            Authorized access only • Security research in progress
+        </div>
+    </div>
+
+    <script>
+        // Simple client-side authentication (for basic protection)
+        // Note: This is not secure against determined attackers, but provides basic privacy
+        const correctPassword = 'cyber2025'; // Change this to your desired password
+        
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+            
+            if (password === correctPassword) {
+                // Store auth in sessionStorage
+                sessionStorage.setItem('authenticated', 'true');
+                // Redirect to main site
+                window.location.href = 'main.html';
+            } else {
+                errorMsg.style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        });
+        
+        // Check if already authenticated
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            window.location.href = 'main.html';
+        }
+    </script>
+</body>
+</html>
