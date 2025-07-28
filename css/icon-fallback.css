@@ -1,0 +1,25 @@
+/* Icon fallbacks for when CDN fails */
+.iconfont.icon-home-fill::before { content: "🏠"; }
+.iconfont.icon-archive-fill::before { content: "📁"; }
+.iconfont.icon-category-fill::before { content: "📂"; }
+.iconfont.icon-tags-fill::before { content: "🏷️"; }
+.iconfont.icon-code-fill::before { content: "💻"; }
+.iconfont.icon-user-fill::before { content: "👤"; }
+.iconfont.icon-link-fill::before { content: "🔗"; }
+.iconfont.icon-search::before { content: "🔍"; }
+.iconfont.icon-dark::before { content: "🌙"; }
+
+/* Hide the original icon if it's not loading and show emoji */
+.iconfont:not([class*="icon-"]):before,
+.iconfont.icon-home-fill:not(.loaded)::before,
+.iconfont.icon-archive-fill:not(.loaded)::before,
+.iconfont.icon-category-fill:not(.loaded)::before,
+.iconfont.icon-tags-fill:not(.loaded)::before,
+.iconfont.icon-code-fill:not(.loaded)::before,
+.iconfont.icon-user-fill:not(.loaded)::before,
+.iconfont.icon-link-fill:not(.loaded)::before,
+.iconfont.icon-search:not(.loaded)::before,
+.iconfont.icon-dark:not(.loaded)::before {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    font-size: 1.1em;
+}
