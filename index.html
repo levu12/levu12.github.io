@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <title>Leo's Cyber Lab</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f1419);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading {
+            font-size: 1.2rem;
+            color: #64ffda;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(100, 255, 218, 0.3);
+            border-radius: 50%;
+            border-top-color: #64ffda;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        Loading Leo's Cyber Lab...
+    </div>
+    
+    <script>
+        // Check if user is authenticated
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            window.location.href = 'main.html';
+        } else {
+            window.location.href = 'auth.html';
+        }
+    </script>
+</body>
+</html>
